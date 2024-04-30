@@ -12,6 +12,8 @@ class NewsTableViewCell: UITableViewCell {
     static let reuseIdentifier = "news-cell"
     static let nibName = "NewsTableViewCell"
     var news : News? = nil
+    let dateFormatter = DateFormatter()
+
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var saveBtn: UIButton!
@@ -41,10 +43,12 @@ class NewsTableViewCell: UITableViewCell {
     }
     func setupUI(news: News) {
         self.news = news
+        dateFormatter.dateStyle = .medium
+
         titleLabel.text = news.title
         categoryLabel.text = news.category
         numOfReadsLabel.text = String(news.numOfReads)
-        postDateLabel.text = news.postDate?.description
+        postDateLabel.text = dateFormatter.string(from: news.postDate!)
         newsImageView.image =  UIImage(named: news.imageName)
         checkSaveBtn()
     }

@@ -37,5 +37,20 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ReadNewsViewController") as! ReadNewsViewController
+        let news = dataSource[indexPath.row]
+        detailVC.newsImageName = news.imageName
+        detailVC.newsTitle = news.title
+        detailVC.category = news.category
+        detailVC.numOfReads = news.numOfReads
+        detailVC.postDate = news.postDate!
+        detailVC.newsBody = news.newsBody
+
+        navigationController?.pushViewController(detailVC, animated: true)
+
+
+    }
 
 }
