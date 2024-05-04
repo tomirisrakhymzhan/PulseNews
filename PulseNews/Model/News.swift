@@ -25,6 +25,7 @@ enum NewsCategory: String, CaseIterable{
 }
 
 struct News {
+    var id: String
     var title: String
     var category: String
     var numOfReads: Int
@@ -37,7 +38,7 @@ struct News {
         var newsList : [News] = []
         for i in 0..<numOfNews {
             let postDate = Date(timeIntervalSinceNow: TimeInterval.random(in: -604800...0)) // Random date within the last week
-            let news = News(title: "News Title \(i)", category: NewsCategory.getRandomNewsCategory().rawValue, numOfReads: Int.random(in: 0...9999), postDate: postDate, imageName: "random \(Int.random(in: 1...7))", isSaved: false, newsBody: News.generateDummNewsBodyText())
+            let news = News(id: UUID().uuidString, title: "News Title \(i)", category: NewsCategory.getRandomNewsCategory().rawValue, numOfReads: Int.random(in: 0...9999), postDate: postDate, imageName: "random \(Int.random(in: 1...7))", isSaved: false, newsBody: News.generateDummNewsBodyText())
             newsList.append(news)
         }
         return newsList

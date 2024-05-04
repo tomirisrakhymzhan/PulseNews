@@ -37,8 +37,12 @@ class NewsTableViewCell: UITableViewCell {
         let filledStarImg = UIImage(systemName: "star.fill")!//
         if self.news?.isSaved == true {
             saveBtn.setImage(filledStarImg, for: .normal)
-        }else if self.news?.isSaved == false {
+            //update datasource
+            SingletonDataSource.sharedInstance.updateNews(news: news!)
+        } else if self.news?.isSaved == false {
             saveBtn.setImage(starImg, for: .normal)
+            //update datasource
+            SingletonDataSource.sharedInstance.updateNews(news: news!)
         }
     }
     func setupUI(news: News) {

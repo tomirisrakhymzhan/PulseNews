@@ -54,7 +54,7 @@
                     <connections>
                         <segue destination="gTD-0f-gTQ" kind="relationship" relationship="viewControllers" id="NJq-ge-a2T"/>
                         <segue destination="yFt-h5-9Tl" kind="relationship" relationship="viewControllers" id="2jL-kn-7NU"/>
-                        <segue destination="ZCx-6a-Onl" kind="relationship" relationship="viewControllers" id="Gm4-V0-C71"/>
+                        <segue destination="I0A-zu-KXX" kind="relationship" relationship="viewControllers" id="Gm4-V0-C71"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F48-rW-baL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +64,7 @@
         <!--Search-->
         <scene sceneID="Wk2-DP-hS3">
             <objects>
-                <viewController id="yFt-h5-9Tl" sceneMemberID="viewController">
+                <viewController id="yFt-h5-9Tl" customClass="SearchViewController" customModule="PulseNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfM-0K-5tU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                     <outlet property="delegate" destination="yFt-h5-9Tl" id="nVI-ZJ-g89"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-jB-weZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-jB-weZ">
                                 <rect key="frame" x="16" y="125" width="361" height="644"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,14 +238,16 @@
         <!--Saved News-->
         <scene sceneID="DmJ-64-fk3">
             <objects>
-                <viewController id="ZCx-6a-Onl" sceneMemberID="viewController">
+                <viewController id="ZCx-6a-Onl" customClass="SavedNewsViewController" customModule="PulseNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LKJ-b7-Wwh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2mM-DC-YOt">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2mM-DC-YOt">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JSG-7b-l0o"/>
@@ -258,12 +260,14 @@
                             <constraint firstItem="2mM-DC-YOt" firstAttribute="top" secondItem="JSG-7b-l0o" secondAttribute="top" id="tTi-Rn-4Dq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saved News" image="star" catalog="system" id="cyn-cC-EYF"/>
                     <navigationItem key="navigationItem" title="Saved News" id="wQ6-sh-yaa"/>
+                    <connections>
+                        <outlet property="tableView" destination="2mM-DC-YOt" id="B5b-u3-sSR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g03-bd-gMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646.56488549618314" y="337.32394366197184"/>
+            <point key="canvasLocation" x="1573.2824427480916" y="337.32394366197184"/>
         </scene>
         <!--News-->
         <scene sceneID="fi6-HV-1Y8">
@@ -298,6 +302,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pd-Pf-Hav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646.56488549618314" y="-1106.3380281690143"/>
+        </scene>
+        <!--Saved News-->
+        <scene sceneID="JJf-Vu-QEx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0A-zu-KXX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved News" image="star" catalog="system" id="cyn-cC-EYF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UFx-tx-vvy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.47843137250000001" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZCx-6a-Onl" kind="relationship" relationship="rootViewController" id="cvp-17-ydL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVj-C2-IGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646.56488549618314" y="337.32394366197184"/>
         </scene>
     </scenes>
     <resources>
