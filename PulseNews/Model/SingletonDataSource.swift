@@ -12,7 +12,7 @@ class SingletonDataSource {
 
     private var data : [News]
     private init(){
-        self.data = News.createNewsList(numOfNews: 12)
+        self.data = News.createRandomNewsList(numOfNews: 1)
     }
     
     func updateNews(news: News) {
@@ -38,6 +38,20 @@ class SingletonDataSource {
     
     func getAllNews() -> [News] {
         return data
+    }
+    
+    func createRandomNews() {
+        let news = News.createOneRandomNews()
+        self.data.append(news)
+    }
+    
+    
+    func updateNumberOfReadsCountRandomly() {
+        for i in self.data.indices {
+            var news = self.data[i]  // Create a mutable copy of the struct at the current index
+                news.numOfReads += Int.random(in: 0...1000)
+            self.data[i] = news  // Assign the modified struct back to the collection
+        }
     }
 
 }

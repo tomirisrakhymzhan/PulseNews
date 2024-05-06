@@ -12,7 +12,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate,
                                 UITableViewDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredData: [News] = []
-
+    var timer : Timer?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,10 +23,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate,
         searchBar.placeholder = "Search for a news..."
         tableView.register(UINib(nibName: NewsTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: NewsTableViewCell.reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.filteredData = SingletonDataSource.sharedInstance.getAllNews()
+            self.tableView.reloadData()
+        }
     }
+    deinit{
+        timer?.invalidate()
+        timer = nil
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        filteredData =  SingletonDataSource.sharedInstance.getAllNews()
+        filteredData = SingletonDataSource.sharedInstance.getAllNews()
         tableView.reloadData()
     }
     

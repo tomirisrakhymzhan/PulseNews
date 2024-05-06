@@ -34,7 +34,7 @@ struct News {
     var isSaved: Bool
     var newsBody: String
     
-    static func createNewsList(numOfNews: Int) -> [News] {
+    static func createRandomNewsList(numOfNews: Int) -> [News] {
         var newsList : [News] = []
         for i in 0..<numOfNews {
             let postDate = Date(timeIntervalSinceNow: TimeInterval.random(in: -604800...0)) // Random date within the last week
@@ -42,6 +42,12 @@ struct News {
             newsList.append(news)
         }
         return newsList
+    }
+    
+    static func createOneRandomNews() -> News {
+            let postDate = Date(timeIntervalSinceNow: TimeInterval.random(in: -604800...0)) // Random date within the last week
+            let news = News(id: UUID().uuidString, title: "News Title Random \(Int.random(in: 0...100))", category: NewsCategory.getRandomNewsCategory().rawValue, numOfReads: Int.random(in: 0...9999), postDate: postDate, imageName: "random \(Int.random(in: 1...7))", isSaved: false, newsBody: News.generateDummNewsBodyText())
+            return news
     }
     
     static func generateDummNewsBodyText() -> String {
