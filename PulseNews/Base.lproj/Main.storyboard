@@ -53,7 +53,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="gTD-0f-gTQ" kind="relationship" relationship="viewControllers" id="NJq-ge-a2T"/>
-                        <segue destination="yFt-h5-9Tl" kind="relationship" relationship="viewControllers" id="2jL-kn-7NU"/>
+                        <segue destination="ajH-iy-WwH" kind="relationship" relationship="viewControllers" id="2jL-kn-7NU"/>
                         <segue destination="I0A-zu-KXX" kind="relationship" relationship="viewControllers" id="Gm4-V0-C71"/>
                     </connections>
                 </tabBarController>
@@ -70,16 +70,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-XK-u07">
-                                <rect key="frame" x="16" y="64" width="361" height="56"/>
+                                <rect key="frame" x="16" y="108" width="361" height="56"/>
                                 <color key="barTintColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="yFt-h5-9Tl" id="nVI-ZJ-g89"/>
-                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-jB-weZ">
-                                <rect key="frame" x="16" y="125" width="361" height="644"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="169" width="361" height="600"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,14 +96,15 @@
                             <constraint firstItem="UHY-jB-weZ" firstAttribute="bottom" secondItem="V7v-KW-WzG" secondAttribute="bottom" id="Utq-Fg-dUH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="KQn-cZ-PN6">
-                        <color key="badgeColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Search" id="jvF-LP-oRQ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="6oA-XK-u07" id="6Ae-3Z-2b8"/>
+                        <outlet property="tableView" destination="UHY-jB-weZ" id="XTb-ou-yIt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I58-Aj-Ngz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647" y="-366"/>
+            <point key="canvasLocation" x="1573.2824427480916" y="-366.19718309859155"/>
         </scene>
         <!--Read News View Controller-->
         <scene sceneID="b2O-sR-Yj3">
@@ -175,7 +173,7 @@
                                                         <rect key="frame" x="0.0" y="147.33333333333337" width="377" height="722"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="0.47843137250000001" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                         <color key="textColor" red="0.47843137250000001" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -233,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yny-jP-c1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402.290076335878" y="-650"/>
+            <point key="canvasLocation" x="3329.0076335877861" y="-650"/>
         </scene>
         <!--Saved News-->
         <scene sceneID="DmJ-64-fk3">
@@ -324,6 +322,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVj-C2-IGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646.56488549618314" y="337.32394366197184"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="yMb-GF-s8L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ajH-iy-WwH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="KQn-cZ-PN6">
+                        <color key="badgeColor" red="0.97254901959999995" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RWd-0D-aOk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yFt-h5-9Tl" kind="relationship" relationship="rootViewController" id="a8g-Gl-A6H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzx-0e-pZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646.56488549618314" y="-366.19718309859155"/>
         </scene>
     </scenes>
     <resources>

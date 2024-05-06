@@ -35,5 +35,9 @@ class SingletonDataSource {
     func getAllSavedNews() -> [News] {
         return data.filter{$0.isSaved == true}
     }
+    
+    func getAllNews() -> [News] {
+        return data
+    }
 
 }

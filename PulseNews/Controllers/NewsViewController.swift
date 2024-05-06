@@ -25,6 +25,10 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  SingletonDataSource.sharedInstance.getCount()
     }
